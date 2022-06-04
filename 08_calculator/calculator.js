@@ -9,7 +9,7 @@ const subtract = function(num1, num2) {
 const sum = function(num1, num2) {
   if (num1 < num2) {
     sum = num1;
-    for (i=num1 + 1; i <= num2; i++) {
+    for (i=num1 + 1; i <= num2; i++) {npm 
         sum = sum + i; 
     }
     return sum;
