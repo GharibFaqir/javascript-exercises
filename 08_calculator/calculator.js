@@ -1,46 +1,66 @@
-const add = function(num1, num2) {
-  return num1 + num2;
+const add = function(x, y) {
+  return x+y;
 };
 
-const subtract = function(num1, num2) {
-  return num1 - num2;
+const subtract = function(x, y) {
+  return x-y;
 };
 
-const sum = function(num1, num2) {
-  if (num1 < num2) {
-    sum = num1;
-    for (i=num1 + 1; i <= num2; i++) {npm 
-        sum = sum + i; 
+const sum = function(x, y) {
+  if (typeof x == 'object') {
+    z = 0;
+    for (i=0; i <= x.length-1; i++) {
+      z = z+x[i];
     }
-    return sum;
-}
-else if (num2 < num1) {
-    sum = num2;
-    for (i=num2 + 1; i <= num1; i++) {
-        sum = sum +i;
+    return z;
+  }
+  else {
+    if (x<y) {
+      z = 0;
+      for (i=x; i <= y; i++) {
+        z = z + i;
+      }
+      return z;
     }
-    return sum;
-}
-else {
-    return num1;
-}
+    else if (y < x) {
+      z = 0;
+      for (i=y; i <= x; i++) {
+        z = z+i;
+      }
+      return z;
+    }
+    else {
+      return x;
+    }
+  }
 };
 
-const multiply = function(num1, num2) {
-  return num1 * num2;
+const multiply = function(x, y) {
+  if (typeof x == 'object') {
+    z = 1;
+    for (i=0; i <= x.length-1; i++) {
+      z = z*x[i];
+    }
+    return z;
+  }
+  else {
+    return x*y;
+  }
 };
 
-const power = function(num1, num2) {
-  return Math.pow(num1, num2);
+const power = function(x, y) {
+  return Math.pow(x,y);
 };
 
-const factorial = function(num1) {
+const factorial = function(x) {
   fac = 1;
-  for (i=num1; i<=1; i--) {
+  for (i=1; i <= x; i++) {
     fac = fac*i;
   }
   return fac;
 };
+
+console.log(sum(3,5));
 
 // Do not edit below this line
 module.exports = {
