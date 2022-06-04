@@ -1,15 +1,17 @@
 const ftoc = function(temp) {
-  return Math.round(5*(temp-32)/9);
+  c = 5*(temp-32)/9;
+  return Math.round(c*10)/10;
 };
 
 const ctof = function(temp) {
-  return Math.round(temp*9/5 +32);
+  f = (temp*9/5) + 32;
+  return Math.round(f*10)/10;
 };
 
-// Do not edit below this line
-// console.log(ftoc(100));
-// console.log(ctof(37.8));
+console.log(ftoc(-100));
+console.log(ctof(37.8));
 
+// Do not edit below this line
 module.exports = {
   ftoc,
   ctof
